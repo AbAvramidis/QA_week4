@@ -1,0 +1,13 @@
+#!/bin/bash 
+
+
+array=(one two three)
+
+echo ${#array[*]}
+
+for item in ${array[*]}
+do 
+	printf "%s\n" $item
+done
+
+
