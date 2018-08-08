@@ -1,0 +1,72 @@
+Vargant - Jenkins
+
+CMD windows:
+------------
+vargant status 
+vargant up
+vargant ssh "name vm"
+
+Install Jenkins on CentOS 7
+---------------------------
+https://www.vultr.com/docs/how-to-install-jenkins-on-centos-7
+Jenkins server :
+jenkins jenkins  10.0.10.10:8080
+
+	$ sudo service jenkins stop
+Restart Jenkins
+	$ sudo service jenkins restart
+Check Jenkins status
+	$ sudo service jenkins status
+
+Jenkins server is installed on Jenkins VM machine
+so you can execute:
+
+echo "jenkins:"
+ls -al ~/.ssh
+echo "server:"
+ssh server "ls -al ~/.ssh"
+
+
+Inside to vagrant- jenkins vm (10.10):
+------------------------------
+#create a user "jenkins_usr" pass 123
+
+sudo su jenkins (not working! then)
+sudo service jenkins stop
+sudo userdel jenkins
+sudo useradd jenkins 
+sudo service jenkins start
+
+
+ssh-keygen  #create the ssh key , include everything inside the file
+ll ~/.ssh
+chmod -R 700 .ssh/
+
+sudo chown -R jenkins:jenkins /var/lib/jenkins
+sudo chown -R jenkins:jenkins /var/cache/jenkins
+sudo chown -R jenkins:jenkins /var/log/jenkins
+sudo systemctl restart jenkins
+
+
+vi /etc/hosts 
+10.0.10.11 server
+
+
+Into Server VM (10.11):
+---------------
+vagrant ssh server
+sudo useradd jenkins
+ll /home/
+sudo su - jenkins
+mkdir .ssh
+nano authorized_keys
+
+
+
+
+
+----------
+Apo auton pou thelw na kanw ssh, kanw ssh-keygenerate k to kanw paste ston user
+pou thelw na kanw ssh, mesa sto .ssh/authorized_keys
+
+
