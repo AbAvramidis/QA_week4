@@ -1,0 +1,9 @@
+List of Files:
+
+Week4_Bob: Vagrant - Jenkins / How to run Vagrant Hypervisor up to Virtual Box
+file.sh: take input a name and create a user
+netcat.sh: netcut command / run a nc server 
+test.sh: arrays / arrays initialized by user
+test.sh.save: arrays
+week4_scr1.sh: add user, /hosts file
+week4_scr2.sh: netstat -tulpn 
