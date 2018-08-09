@@ -1,0 +1,74 @@
+From Windows machine:
+---------------------
+SSH PORT FORWARDING!!
+you transfer the Webserver jenkins that works on the Jenkins machine as a service to your localhost Windows machine
+ssh -L 8080:localhost:8080 ab@10.0.10.11
+Now from your browser you can go http://localhost:8080 and run Jenkins Box server
+
+
+SSH Connections:
+Generate the key 
+and copy it to the authorized_key folder on the other end.
+
+Jenkins Box server:
+-------------------
+hostname -I
+echo "jenkins:"
+#ls -al ~/.ssh
+echo "server:"
+ssh server "ls -al ~/.ssh"
+ssh server "ssh jenkins 'ls -al ~/.ssh'"
+
+------
+hostname -I
+echo "jenkins:"
+cat ~/scp_file
+-----
+ssh server "hostname -I"
+scp ~/scp_file jenkins@10.0.10.11:~
+
+----
+scp ~/ex1.zip jenkins@10.0.10.11:~
+#ssh server "ssh jenkins 'ls -al ~/.ssh'"
+ssh server "unzip ex1.zip"
+ssh server "./scp_file.sh"
+-------
+
+scp ~/ex1.zip jenkins@10.0.10.11:~
+ssh server "unzip ex1.zip; ./scp_file.sh"
+
+----
+ssh server << _EOF_
+hostname -I
+_EOF_
+
+ssh server << _EOF_
+hostname -I
+unzip ex1.zip
+./scp_file.sh
+_EOF_
+
+
+------
+
+Interactive Terminal: 
+ssh server <<_EOF_
+ls 
+ls -la
+_EOF_
+
+
+
+----------
+SSH connections:
+Windows to Server
+Windows to Jenkins
+Jenkins to Server
+Server to Jenkins
+
+Commands AWK
+---------
+awk ' /'pattern'/ {print $2} '
+ls -la | awk ' {print $2} '
+
+
