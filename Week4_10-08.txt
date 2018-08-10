@@ -1,0 +1,7 @@
+Role based strategy - Jenkins
+------------------------------
+https://www.thegeekstuff.com/2017/03/jenkins-users-groups-roles/
+
+The Global roles overwritte the project roles.
+Create people and add them to a Role into Global Roles
+Then give permissions based on what they can do
