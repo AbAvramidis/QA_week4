@@ -7,3 +7,5 @@ test.sh: arrays / arrays initialized by user
 test.sh.save: arrays
 week4_scr1.sh: add user, /hosts file
 week4_scr2.sh: netstat -tulpn 
+Week4-09-08: ssh port forwardig
+Week4-10-08: role based strategy jenkins
